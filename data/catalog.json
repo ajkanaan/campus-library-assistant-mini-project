@@ -1,0 +1,38 @@
+[
+  {
+    "id": "B001",
+    "title": "Artificial Intelligence: A Modern Approach",
+    "author": "Stuart Russel and Peter Norvig",
+    "available": true
+  },
+  {
+    "id": "B002",
+    "title": "Python Crash Course",
+    "author": "Eric Matthes",
+    "available": true
+  },
+  {
+    "id": "B003",
+    "title": "Automate the Boring Stuff with Python",
+    "author": "Al Sweigart",
+    "available": true
+  },
+  {
+    "id": "B004",
+    "title": "Introduction to Algorithms",
+    "author": "Thomas H. Cormen and others",
+    "available": false
+  },
+  {
+    "id": "B005",
+    "title": "Designing Data-Intensive Applications",
+    "author": "Martin Kleppmann",
+    "available": true
+  },
+  {
+    "id": "B006",
+    "title": "The Pragmatic Programmer",
+    "author": "David Thomas and Andrew Hunt",
+    "available": true
+  }
+]
