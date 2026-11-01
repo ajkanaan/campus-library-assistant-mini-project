@@ -10,6 +10,8 @@ async def main():
     async with Client(server_path) as client:
         tools = await client.list_tools()
 
+        assert {tool.name for tool in tools} == {"search_books", "reserve_book", "find_and_reserve_book"}
+
         print("Available tools:")
         for tool in tools:
             print(f"- {tool.name}")
