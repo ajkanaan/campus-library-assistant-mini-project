@@ -1,19 +1,23 @@
 import json
+import os
 from pathlib import Path
 
 DATA_DIR_PATH = Path(__file__).resolve().parent / "data"
 CATALOG_PATH = DATA_DIR_PATH / "catalog.json"
-RESERVATIONS_PATH = DATA_DIR_PATH / "reservations.json"
+RESERVATIONS_PATH = Path(os.getenv("LIBRARY_RESERVATIONS_PATH", str(DATA_DIR_PATH / "reservations.json")))
 
 def load_catalog() -> list[dict]:
   with CATALOG_PATH.open(encoding='utf-8') as file:
     return json.load(file)
   
-def load_reservations():
+def load_reservations() -> list[dict]:
+  # A fresh checkout has no private reservation data yet. Reading creates nothing.
+  if not RESERVATIONS_PATH.exists():
+    return []
   with RESERVATIONS_PATH.open(encoding='utf-8') as file:
     return json.load(file)
   
-def search_books(query: str):
+def search_books(query: str) -> dict:
   """Search book titles and authors without changing stored data.
   
   Returns success, message, and a list of matching books.

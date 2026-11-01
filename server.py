@@ -35,6 +35,7 @@ def reserve_book(book_id: str, student_id: str) -> dict:
   return library.reserve_book(book_id, student_id)
 
 
+@mcp.tool
 def find_and_reserve_book(query: str, student_id: str) -> dict:
   """Find and reserve a single available matching book.
   
