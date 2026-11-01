@@ -65,6 +65,6 @@ A failed API turn can occur after a reservation was saved. The client stops rath
 
 - [Part 1 summary](docs/summary.md): 300–400 words, with article and server references.
 - [Reflection](docs/reflection.md): tool boundaries and possible next steps.
-- [Screencast guide](docs/screencast.md): 5–7 minute recording outline.
+- [Recorded demonstration](docs/demo.mp4): compressed MP4 with audio.
 
-The final screencast and its hosted link must be recorded and supplied separately; a script or test run is not the recording.
+The demonstration is included in the repository. The original high-resolution MOV is retained locally and excluded from Git.

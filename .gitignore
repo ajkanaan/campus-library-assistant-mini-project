@@ -7,3 +7,6 @@ draft.py
 .DS_Store
 .env.*
 !.env.example
+
+# Original recording; the compressed demo.mp4 is version controlled.
+docs/Demo:Explanation.mov
