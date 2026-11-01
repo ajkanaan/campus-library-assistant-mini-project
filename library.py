@@ -55,7 +55,7 @@ def search_books(query: str):
     'books': matches,
   }
 
-def reserve_book(book_id: str, student_id: str):
+def reserve_book(book_id: str, student_id: str) -> dict:
   """Reserve one available book for a student.
   Saves the reservation to disk on success.
   Returns success, message, and the reservation when created.
