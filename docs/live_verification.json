@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "evidence": "real OpenAI model through Agents SDK and STDIO MCP",
+  "verified_at_utc": "2026-11-01T20:20:25.802903+00:00",
+  "model_configuration": "installed SDK default",
+  "turns": [
+    {
+      "prompt": "Show me all available Python books, listing IDs in ascending order.",
+      "tool_calls": [
+        "search_books"
+      ],
+      "answer": "- **B002** \u2014 *Python Crash Course* by Eric Matthes\n- **B003** \u2014 *Automate the Boring Stuff with Python* by Al Sweigart"
+    },
+    {
+      "prompt": "Reserve the first book you just listed for student S001.",
+      "tool_calls": [
+        "reserve_book"
+      ],
+      "answer": "Reserved **B002 \u2014 *Python Crash Course*** for student **S001**."
+    },
+    {
+      "prompt": "Find an available Pragmatic Programmer book and reserve it for student S002.",
+      "tool_calls": [
+        "find_and_reserve_book"
+      ],
+      "answer": "Reserved **B006 \u2014 *The Pragmatic Programmer*** for student **S002**."
+    },
+    {
+      "prompt": "Try reserving B002 for student S003; check with the reservation tool even if it was reserved earlier.",
+      "tool_calls": [
+        "reserve_book"
+      ],
+      "answer": "Unable to reserve **B002** for **S003**: it is already reserved."
+    }
+  ],
+  "temporary_reservations": [
+    {
+      "book_id": "B002",
+      "student_id": "S001"
+    },
+    {
+      "book_id": "B006",
+      "student_id": "S002"
+    }
+  ]
+}
