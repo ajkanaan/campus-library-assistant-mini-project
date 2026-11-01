@@ -115,3 +115,47 @@ def reserve_book(book_id: str, student_id: str):
     "message": f"Reserved {book["title"]} for {student_id}.",
     "reservation": reservation,
   }
+  
+def find_and_reserve_book(query: str, student_id: str) -> dict:
+  """Search for a book and reserve a single available match.
+  
+  If several available books match, returns choices without reserving.
+  Returns success, message, and either choices or a reservation.
+  """
+  
+  if not student_id.strip():
+    return {
+      "success": False,
+      "message": "Student ID is required.",
+    }
+    
+  search_result = search_books(query)
+  
+  if not search_result['success']:
+    return search_result
+  
+  available_books = [
+    book 
+    for book in search_result["books"]
+    if book['available']
+  ]
+  
+  if not available_books:
+    return {
+      "success": False,
+      "message": "No available books match your query.",
+    }
+    
+  if len(available_books) > 1:
+    return {
+      "success": False,
+      "message": (
+        "Several available books match. "
+        "Choose a book ID to reserve."
+      ),
+      "choices": available_books,
+    }
+    
+  book = available_books[0]
+  
+  return reserve_book(book['id'], student_id)
